@@ -23,7 +23,7 @@ export default function UpdateButton(props: UpdateButtonProps) {
   const handleClick = () => {
     update().then((res) => {
       enqueueSnackbar('successfully updated', { variant: 'success' });
-      props.setUid(`${WS_URL}/${res}`);
+      props.setUid(`${WS_URL}?id=${res}`);
     }).catch((e) => {
       enqueueSnackbar('error occurred while updating', { variant: 'error' });
       console.error(`error occurred updating websocketUid ${e}`);
